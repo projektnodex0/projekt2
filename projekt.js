@@ -1,4 +1,4 @@
-﻿var oDoc,showSource;
+﻿var oDoc,showSource, init, format;
 init = function () {
 	'use strict';
 	oDoc = document.getElementById("textBox");
