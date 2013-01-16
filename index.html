@@ -2,8 +2,14 @@
 <html>
 <head>
 <title>Projekt</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="projekt.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="jquery.generateFile.js"></script>
+<script type="text/javascript" src="md5-min.js"></script>
+<script type="text/javascript" src="url.js"></script>
 <link rel="stylesheet" type="text/css" href="projekt.css" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.18.custom.css" />
 </head>
 <body onload="init();">
 <form name="formularz" method="post">
@@ -71,9 +77,17 @@
 <img class="intLink" title="Kopiuj" onclick="format('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />
 <img class="intLink" title="Wklej" onclick="format('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
 <br/>
+<div id="previousSlide" onclick="slide('previous')">Poprzedni slajd</div>
+<div id="nextSlide" onclick="slide('next')">Następny slajd</div>
+<div id="slideNumber">1</div>
 </div>
 <div id="textBox" contenteditable="true"></div>
 <p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="showSource(this.checked);" /> <label for="switchBox">Pokaż HTML</label></p>
+<input type="file" id="plik">
 </form>
+<input type="submit" value="add editable" onclick="createDiv();">
+<input type="submit" value="upload to server" id="upload">
+<input type="submit" value="load file from server" id="load">
+<div id="link"></div>
 </body>
 </html>
